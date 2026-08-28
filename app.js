@@ -31,12 +31,6 @@ const DEFAULT_MEMBERS = [
   }
 ];
 
-const PRESETS = [
-  "Pics/Hiranmoy.jpg",
-  "Pics/Swarnava.jpg",
-  "Pics/Adrija.jpg"
-];
-
 let teamMembers = [];
 let activeDepartment = "all";
 let activeSearch = "";
@@ -53,18 +47,8 @@ const gridBtn = document.getElementById("gridBtn");
 const listBtn = document.getElementById("listBtn");
 const toastStack = document.getElementById("toastStack");
 
-const modalBackdrop = document.getElementById("modalBackdrop");
-const openModalBtn = document.getElementById("openModalBtn");
-const closeModalBtn = document.getElementById("closeModalBtn");
-const cancelModalBtn = document.getElementById("cancelModalBtn");
-const newMemberForm = document.getElementById("newMemberForm");
-const avatarPreviewImg = document.getElementById("avatarPreviewImg");
-const avatarUrlInput = document.getElementById("avatarUrl");
-const presetThumbnails = document.getElementById("presetThumbnails");
-
 document.addEventListener("DOMContentLoaded", () => {
   initStorage();
-  buildPresetThumbnails();
   bindEvents();
   renderTeam();
 });
@@ -273,27 +257,6 @@ function bindEvents() {
     gridBtn.classList.remove("active");
     teamGrid.classList.add("list-layout");
   });
-
-  openModalBtn.addEventListener("click", openModal);
-  closeModalBtn.addEventListener("click", closeModal);
-  cancelModalBtn.addEventListener("click", closeModal);
-
-  modalBackdrop.addEventListener("click", (e) => {
-    if (e.target === modalBackdrop) closeModal();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalBackdrop.classList.contains("open")) {
-      closeModal();
-    }
-  });
-
-  avatarUrlInput.addEventListener("input", (e) => {
-    const val = e.target.value.trim();
-    if (val) avatarPreviewImg.src = val;
-  });
-
-  newMemberForm.addEventListener("submit", handleAddMember);
 }
 
 function resetAll() {
@@ -308,68 +271,6 @@ function resetAll() {
   });
 
   renderTeam();
-}
-
-function buildPresetThumbnails() {
-  presetThumbnails.innerHTML = PRESETS.map((url, idx) => `
-    <button type="button" class="thumb-btn ${idx === 0 ? 'selected' : ''}" data-url="${url}">
-      <img src="${url}" alt="Preset">
-    </button>
-  `).join("");
-
-  avatarUrlInput.value = PRESETS[0];
-  avatarPreviewImg.src = PRESETS[0];
-
-  const thumbs = presetThumbnails.querySelectorAll(".thumb-btn");
-  thumbs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      thumbs.forEach(t => t.classList.remove("selected"));
-      btn.classList.add("selected");
-      const url = btn.getAttribute("data-url");
-      avatarUrlInput.value = url;
-      avatarPreviewImg.src = url;
-    });
-  });
-}
-
-function openModal() {
-  modalBackdrop.classList.add("open");
-  document.getElementById("memberName").focus();
-}
-
-function closeModal() {
-  modalBackdrop.classList.remove("open");
-  newMemberForm.reset();
-  buildPresetThumbnails();
-}
-
-function handleAddMember(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("memberName").value.trim();
-  const department = document.getElementById("memberDept").value;
-  const role = document.getElementById("memberRole").value.trim();
-  const phone = document.getElementById("memberPhone").value.trim();
-  const email = document.getElementById("memberEmail").value.trim();
-  const avatar = avatarUrlInput.value.trim() || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=6366f1&color=fff`;
-
-  if (!name || !role || !phone || !email) return;
-
-  const newMember = {
-    id: `mem-${Date.now()}`,
-    name,
-    role,
-    department,
-    phone,
-    email,
-    avatar
-  };
-
-  teamMembers.unshift(newMember);
-  persistMembers();
-  renderTeam();
-  closeModal();
-  showToast(`${name} added to the team!`);
 }
 
 window.copyText = function(text, msg = "Copied to clipboard!") {
