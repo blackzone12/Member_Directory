@@ -38,10 +38,6 @@
               <i class="fa-solid fa-list"></i>
             </button>
           </div>
-          <button class="add-btn" id="openModalBtn">
-            <i class="fa-solid fa-plus"></i>
-            <span>Add Member</span>
-          </button>
         </div>
       </div>
 
@@ -76,70 +72,6 @@
     <footer class="footer">
       <p>© 2026 Team Directory.</p>
     </footer>
-  </div>
-
-  <div class="modal-backdrop" id="modalBackdrop">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div>
-          <h2>Add New Member</h2>
-          <p>Add a new colleague to the team showcase.</p>
-        </div>
-        <button class="close-modal-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
-      </div>
-
-      <form id="newMemberForm" class="member-form">
-        <div class="avatar-picker-group">
-          <div class="avatar-preview">
-            <img id="avatarPreviewImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Preview">
-          </div>
-          <div class="avatar-inputs">
-            <div class="avatar-thumbnails" id="presetThumbnails"></div>
-            <input type="url" id="avatarUrl" class="text-input" placeholder="Or paste image URL" required>
-          </div>
-        </div>
-
-        <div class="input-grid">
-          <div class="form-field">
-            <label for="memberName">Full Name</label>
-            <input type="text" id="memberName" class="text-input" placeholder="e.g. Maya Lin" required>
-          </div>
-
-          <div class="form-field">
-            <label for="memberDept">Department</label>
-            <select id="memberDept" class="text-input select-input" required>
-              <option value="Engineering" selected>Engineering</option>
-              <option value="Leadership">Leadership</option>
-              <option value="Design">Design</option>
-              <option value="Product">Product</option>
-              <option value="Marketing">Marketing</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label for="memberRole">Role / Title</label>
-          <input type="text" id="memberRole" class="text-input" placeholder="e.g. Lead UX Architect" required>
-        </div>
-
-        <div class="input-grid">
-          <div class="form-field">
-            <label for="memberPhone">Phone Number</label>
-            <input type="tel" id="memberPhone" class="text-input" placeholder="e.g. +1 (555) 432-8765" required>
-          </div>
-
-          <div class="form-field">
-            <label for="memberEmail">Email Address</label>
-            <input type="email" id="memberEmail" class="text-input" placeholder="e.g. maya.lin@company.com" required>
-          </div>
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
-          <button type="submit" class="btn-submit">Add to Directory</button>
-        </div>
-      </form>
-    </div>
   </div>
 
   <div class="toast-stack" id="toastStack"></div>
