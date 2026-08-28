@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-backdrop">
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <span class="pill-tag">Member Directory</span>
+      <h1>Meet the People Behind Our Work</h1>
+      <p class="subtitle">Get in touch with our team members across leadership, design, engineering, and product.</p>
+
+      <div class="controls-wrapper">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search by name, role, email, or phone...">
+          <button id="clearBtn" class="clear-search-btn" aria-label="Clear search">&times;</button>
+        </div>
+
+        <div class="action-buttons">
+          <div class="layout-toggle">
+            <button class="toggle-btn active" id="gridBtn" aria-label="Grid View">
+              <i class="fa-solid fa-table-cells-large"></i>
+            </button>
+            <button class="toggle-btn" id="listBtn" aria-label="List View">
+              <i class="fa-solid fa-list"></i>
+            </button>
+          </div>
+          <button class="add-btn" id="openModalBtn">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Member</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="category-filters" id="categoryFilters">
+        <button class="filter-btn active" data-dept="all">All <span class="badge" id="countAll">0</span></button>
+        <button class="filter-btn" data-dept="Leadership">Leadership <span class="badge" id="countLeadership">0</span></button>
+        <button class="filter-btn" data-dept="Engineering">Engineering <span class="badge" id="countEngineering">0</span></button>
+        <button class="filter-btn" data-dept="Design">Design <span class="badge" id="countDesign">0</span></button>
+        <button class="filter-btn" data-dept="Product">Product <span class="badge" id="countProduct">0</span></button>
+        <button class="filter-btn" data-dept="Marketing">Marketing <span class="badge" id="countMarketing">0</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="status-bar">
+        <span id="memberCountText">Showing all members</span>
+        <button id="resetSearchBtn" class="reset-link">Clear filters</button>
+      </div>
+
+      <section class="team-grid" id="teamGrid"></section>
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">
+          <i class="fa-solid fa-user-xmark"></i>
+        </div>
+        <h2>No team members found</h2>
+        <p>Try searching for a different keyword or department.</p>
+        <button class="reset-btn" id="emptyResetBtn">Reset Search</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Team Directory.</p>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h2>Add New Member</h2>
+          <p>Add a new colleague to the team showcase.</p>
+        </div>
+        <button class="close-modal-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="newMemberForm" class="member-form">
+        <div class="avatar-picker-group">
+          <div class="avatar-preview">
+            <img id="avatarPreviewImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Preview">
+          </div>
+          <div class="avatar-inputs">
+            <div class="avatar-thumbnails" id="presetThumbnails"></div>
+            <input type="url" id="avatarUrl" class="text-input" placeholder="Or paste image URL" required>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <div class="form-field">
+            <label for="memberName">Full Name</label>
+            <input type="text" id="memberName" class="text-input" placeholder="e.g. Maya Lin" required>
+          </div>
+
+          <div class="form-field">
+            <label for="memberDept">Department</label>
+            <select id="memberDept" class="text-input select-input" required>
+              <option value="Engineering" selected>Engineering</option>
+              <option value="Leadership">Leadership</option>
+              <option value="Design">Design</option>
+              <option value="Product">Product</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="memberRole">Role / Title</label>
+          <input type="text" id="memberRole" class="text-input" placeholder="e.g. Lead UX Architect" required>
+        </div>
+
+        <div class="input-grid">
+          <div class="form-field">
+            <label for="memberPhone">Phone Number</label>
+            <input type="tel" id="memberPhone" class="text-input" placeholder="e.g. +1 (555) 432-8765" required>
+          </div>
+
+          <div class="form-field">
+            <label for="memberEmail">Email Address</label>
+            <input type="email" id="memberEmail" class="text-input" placeholder="e.g. maya.lin@company.com" required>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn-submit">Add to Directory</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
