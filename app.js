@@ -22,7 +22,7 @@ const DEFAULT_MEMBERS = [
   {
     id: "mem-3",
     name: "Mrs. Adrija Chakraborty",
-    role: "Business Strategy & Finance Lead",
+    role: "Strategist",
     departments: ["Marketing"],
     department: "Marketing",
     phone: "+91 9641198313",
