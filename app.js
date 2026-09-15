@@ -41,7 +41,7 @@ const DEFAULT_MEMBERS = [
   }
 ];
 
-let teamMembers = [];
+let teamMembers = DEAFULT_MEMBERS;
 let activeDepartment = "all";
 let activeSearch = "";
 
