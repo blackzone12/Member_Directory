@@ -2,7 +2,7 @@ const DEFAULT_MEMBERS = [
   {
     id: "mem-1",
     name: "Mr. Hiranmoy Roy",
-    role: "Lead Developer & Electrical Designer",
+    role: "Lead Developer",
     departments: ["Engineering", "Leadership"],
     department: "Engineering",
     phone: "+91 9832224657",
@@ -11,23 +11,33 @@ const DEFAULT_MEMBERS = [
   },
   {
     id: "mem-2",
-    name: "Mr. Swarnava Datta",
-    role: "Project Designer",
-    departments: ["Design", "Leadership"],
+    name: "Mr. Debraj Nag",
+    role: "Frontend Developer",
+    departments: ["Design"],
     department: "Design",
-    phone: "+91 9932803444",
+    phone: "+91 8617270422",
     email: "shaan14626@gmail.com",
     avatar: "Swarnava.jpg"
   },
   {
     id: "mem-3",
-    name: "Mrs. Adrija Chakraborty",
-    role: "Strategist",
-    departments: ["Marketing"],
-    department: "Marketing",
-    phone: "+91 9641198313",
+    name: "Mrs. Anuja Roy",
+    role: "Designer",
+    departments: ["Design"],
+    department: "Design",
+    phone: "+91 6291372792",
     email: "chakrabortymithu431@gmail.com",
     avatar: "Adrija.jpg"
+  },
+  {
+    id: "mem-4",
+    name: "Mr. Abhineet Ghosh",
+    role: "AI Engineer",
+    departments: ["Engineering"],
+    department: "Engineering",
+    phone: "+91 9874833503",
+    email: "shaan14626@gmail.com",
+    avatar: "Swarnava.jpg"
   }
 ];
 
