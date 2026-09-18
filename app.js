@@ -16,8 +16,8 @@ const DEFAULT_MEMBERS = [
     departments: ["Design"],
     department: "Design",
     phone: "+91 8617270422",
-    email: "shaan14626@gmail.com",
-    avatar: "Swarnava.jpg"
+    email: "nagdebraj227@gmail.com",
+    avatar: "debraj.jpeg"
   },
   {
     id: "mem-3",
@@ -26,8 +26,8 @@ const DEFAULT_MEMBERS = [
     departments: ["Design"],
     department: "Design",
     phone: "+91 6291372792",
-    email: "chakrabortymithu431@gmail.com",
-    avatar: "Adrija.jpg"
+    email: "anujaroy2022@gmail.com",
+    avatar: "anuja.jpeg"
   },
   {
     id: "mem-4",
