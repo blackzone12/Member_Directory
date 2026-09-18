@@ -32,8 +32,8 @@ const DEFAULT_MEMBERS = [
     role: "AI Engineer",
     departments: ["Engineering"],
     phone: "+91 9874833503",
-    email: "shaan14626@gmail.com",
-    avatar: "Swarnava.jpg"
+    email: "abhineetghoshpvm8b@gmail.com",
+    avatar: "abhineet.jpg"
   }
 ];
 
