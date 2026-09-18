@@ -4,7 +4,6 @@ const DEFAULT_MEMBERS = [
     name: "Mr. Hiranmoy Roy",
     role: "Lead Developer",
     departments: ["Engineering", "Leadership"],
-    department: "Engineering",
     phone: "+91 9832224657",
     email: "hiranmoyroyr@gmail.com",
     avatar: "Hiranmoy.jpg"
@@ -14,7 +13,6 @@ const DEFAULT_MEMBERS = [
     name: "Mr. Debraj Nag",
     role: "Frontend Developer",
     departments: ["Engineering","Design"],
-    department: "Design",
     phone: "+91 8617270422",
     email: "nagdebraj227@gmail.com",
     avatar: "debraj.jpeg"
@@ -24,7 +22,6 @@ const DEFAULT_MEMBERS = [
     name: "Mrs. Anuja Roy",
     role: "Designer",
     departments: ["Engineering","Design"],
-    department: "Design",
     phone: "+91 6291372792",
     email: "anujaroy2022@gmail.com",
     avatar: "anuja.jpeg"
@@ -34,7 +31,6 @@ const DEFAULT_MEMBERS = [
     name: "Mr. Abhineet Ghosh",
     role: "AI Engineer",
     departments: ["Engineering"],
-    department: "Engineering",
     phone: "+91 9874833503",
     email: "shaan14626@gmail.com",
     avatar: "Swarnava.jpg"
